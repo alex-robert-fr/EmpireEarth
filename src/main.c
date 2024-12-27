@@ -4,7 +4,7 @@
 int main() {
   InitWindow(1270, 720, "Empire Earth - The New Age");
 
-  Camera3D camera = init_camera();
+  Camera3D *camera = init_camera();
 
   Vector3 map_position = {0.0f, 0.0f, 0.0f};
 
@@ -16,26 +16,9 @@ int main() {
   SetTargetFPS(60);
 
   while (!WindowShouldClose()) {
-    if (IsKeyPressed('Z'))
-      camera.target = (Vector3){0.0f, 0.0f, 0.0f};
-
-    if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
-      if (!collision.hit) {
-        ray = GetScreenToWorldRay(GetMousePosition(), camera);
-        collision = GetRayCollisionBox(
-            ray,
-            (BoundingBox){
-                (Vector3){unit.x - unit_size.x / 2, unit.y - unit_size.y / 2,
-                          unit.z - unit_size.z / 2},
-                (Vector3){unit.x + unit_size.x / 2, unit.y + unit_size.y / 2,
-                          unit.z + unit_size.z / 2}});
-      } else
-        collision.hit = false;
-    }
-
     BeginDrawing();
     ClearBackground(RAYWHITE);
-    BeginMode3D(camera);
+    BeginMode3D(*camera);
     DrawPlane(map_position, (Vector2){10.0f, 10.0f}, BROWN);
     DrawGrid(10, 1.0f);
     if (collision.hit) {
@@ -52,6 +35,7 @@ int main() {
     EndMode3D();
     EndDrawing();
   }
+  free_camera(camera);
   CloseWindow();
   return 0;
 }

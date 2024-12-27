@@ -16,7 +16,10 @@ $(NAME): $(OBJ_SRC)
 	$(CC) $(CFLAGS) -o $(NAME) $^ $(INCLUDES) $(RAYLIB) $(LIBS)
 
 %.o: %.c
-	$(CC) $(CFLAGS) $(INCLUDES) -c -o $@ $<
+	$(CC) $(CFLAGS) $(INCLUDES) -g -c -o $@ $<
+
+debug:
+	valgrind --leak-check=full ./$(NAME)
 
 clean:
 	rm -rf $(OBJ_SRC)
