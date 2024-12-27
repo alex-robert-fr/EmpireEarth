@@ -1,11 +1,22 @@
-CC = clang
-CFLAGS = -Wall -I/usr/local/include
-LIBS = -L/usr/local/lib -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
+NAME			=	EmpireEarth
+CC				= clang
+CFLAGS 		= -Wall -Werror -Wextra
+RAYLIB		=	-I/usr/local/include -L/usr/local/lib -lraylib
+LIBS 			= -lGL -lm -lpthread -ldl -lrt -lX11
+SRC				=	./src/main.c	\
+						./src/features/camera/camera.c
+OBJ_SRC		=	$(SRC:.c=.o)
 
-all: empire_earth
 
-empire_earth: main.c
-	$(CC) main.c camera.c -o empire_earth $(CFLAGS) $(LIBS)
+all: $(NAME)
+
+$(NAME): $(OBJ_SRC)
+	$(CC) $^ -o $(NAME) $(RAYLIB) $(CFLAGS) $(LIBS)
 
 clean:
-	rm -rf empire_earth
+	rm -rf $(OBJ_SRC)
+
+fclean: clean
+	rm -rf $(NAME)
+
+re: fclean all
