@@ -1,4 +1,4 @@
-#include <raylib.h>
+#include "camera.h"
 
 Camera3D init_camera() {
   Camera3D camera = {0};

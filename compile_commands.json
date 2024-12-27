@@ -1,0 +1,36 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Werror",
+      "-Wextra",
+      "-Isrc/includes/",
+      "-Isrc/features/camera/",
+      "-c",
+      "-o",
+      "src/main.o",
+      "src/main.c"
+    ],
+    "directory": "/home/x7c00/Documents/empire_earth",
+    "file": "/home/x7c00/Documents/empire_earth/src/main.c",
+    "output": "/home/x7c00/Documents/empire_earth/src/main.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Werror",
+      "-Wextra",
+      "-Isrc/includes/",
+      "-Isrc/features/camera/",
+      "-c",
+      "-o",
+      "src/features/camera/camera.o",
+      "src/features/camera/camera.c"
+    ],
+    "directory": "/home/x7c00/Documents/empire_earth",
+    "file": "/home/x7c00/Documents/empire_earth/src/features/camera/camera.c",
+    "output": "/home/x7c00/Documents/empire_earth/src/features/camera/camera.o"
+  }
+]

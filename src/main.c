@@ -1,4 +1,4 @@
-#include "features/camera/camera.h"
+#include "camera.h"
 #include <raylib.h>
 
 int main() {
