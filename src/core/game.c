@@ -1,4 +1,6 @@
 #include "core/game.h"
+#include "components/components.h"
+#include "components/transform.h"
 #include "core/ecs.h"
 #include "debug/entity.h"
 #include "modules/camera.h"
@@ -46,9 +48,10 @@ Game *init_game() {
 }
 
 void update_game(Game *game) {
-  (void)game;
   if (IsKeyPressed(KEY_P)) {
-    ecs_create_entity(game->manager);
+    Entity entity = ecs_create_entity(game->manager);
+    EntityTransform transform = {.position = (Vector3){0.0f, 0.0f, 0.0f}};
+    ecs_add_component(game->manager, entity, COMPONENT_TRANSFORM, &transform);
   }
 }
 
@@ -59,6 +62,7 @@ void render_game(Game *game) {
   display_entity_number(game->manager->entities_number);
   BeginMode3D(*game->camera);
   render_map(game->map);
+  render_entities(game->manager);
   EndMode3D();
   EndDrawing();
 }
