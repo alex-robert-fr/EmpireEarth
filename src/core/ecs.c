@@ -21,6 +21,7 @@ Entity ecs_create_entity(EntityManager *manager) {
   for (Entity e = 0; e < MAX_ENTITIES; e++) {
     if (!manager->active[e]) {
       manager->active[e] = 1;
+      manager->entities_number++;
       return (e);
     }
   }

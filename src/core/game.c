@@ -1,5 +1,6 @@
 #include "core/game.h"
 #include "core/ecs.h"
+#include "debug/entity.h"
 #include "modules/camera.h"
 #include "modules/world.h"
 #include <raylib.h>
@@ -39,7 +40,7 @@ Game *init_game() {
   game->manager = manager;
   game->camera = camera;
   game->map = map;
-  game->counter = "0";
+  game->manager->entities_number = 0;
 
   return (game);
 }
@@ -47,6 +48,7 @@ Game *init_game() {
 void update_game(Game *game) {
   (void)game;
   if (IsKeyPressed(KEY_P)) {
+    ecs_create_entity(game->manager);
   }
 }
 
@@ -54,7 +56,7 @@ void render_game(Game *game) {
   BeginDrawing();
   ClearBackground(RAYWHITE);
   DrawFPS(5, 0);
-  DrawText(game->counter, 5, 20, 20, RED);
+  display_entity_number(game->manager->entities_number);
   BeginMode3D(*game->camera);
   render_map(game->map);
   EndMode3D();
