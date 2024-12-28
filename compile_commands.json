@@ -5,10 +5,7 @@
       "-Wall",
       "-Werror",
       "-Wextra",
-      "-Isrc/includes/",
-      "-Isrc/features/camera/",
-      "-Isrc/features/map/",
-      "-Isrc/features/game/",
+      "-Isrc/",
       "-g",
       "-c",
       "-o",
@@ -18,65 +15,5 @@
     "directory": "/home/x7c00/Documents/empire_earth",
     "file": "/home/x7c00/Documents/empire_earth/src/main.c",
     "output": "/home/x7c00/Documents/empire_earth/src/main.o"
-  },
-  {
-    "arguments": [
-      "/usr/bin/clang",
-      "-Wall",
-      "-Werror",
-      "-Wextra",
-      "-Isrc/includes/",
-      "-Isrc/features/camera/",
-      "-Isrc/features/map/",
-      "-Isrc/features/game/",
-      "-g",
-      "-c",
-      "-o",
-      "src/features/camera/camera.o",
-      "src/features/camera/camera.c"
-    ],
-    "directory": "/home/x7c00/Documents/empire_earth",
-    "file": "/home/x7c00/Documents/empire_earth/src/features/camera/camera.c",
-    "output": "/home/x7c00/Documents/empire_earth/src/features/camera/camera.o"
-  },
-  {
-    "arguments": [
-      "/usr/bin/clang",
-      "-Wall",
-      "-Werror",
-      "-Wextra",
-      "-Isrc/includes/",
-      "-Isrc/features/camera/",
-      "-Isrc/features/map/",
-      "-Isrc/features/game/",
-      "-g",
-      "-c",
-      "-o",
-      "src/features/map/map.o",
-      "src/features/map/map.c"
-    ],
-    "directory": "/home/x7c00/Documents/empire_earth",
-    "file": "/home/x7c00/Documents/empire_earth/src/features/map/map.c",
-    "output": "/home/x7c00/Documents/empire_earth/src/features/map/map.o"
-  },
-  {
-    "arguments": [
-      "/usr/bin/clang",
-      "-Wall",
-      "-Werror",
-      "-Wextra",
-      "-Isrc/includes/",
-      "-Isrc/features/camera/",
-      "-Isrc/features/map/",
-      "-Isrc/features/game/",
-      "-g",
-      "-c",
-      "-o",
-      "src/features/game/game.o",
-      "src/features/game/game.c"
-    ],
-    "directory": "/home/x7c00/Documents/empire_earth",
-    "file": "/home/x7c00/Documents/empire_earth/src/features/game/game.c",
-    "output": "/home/x7c00/Documents/empire_earth/src/features/game/game.o"
   }
 ]

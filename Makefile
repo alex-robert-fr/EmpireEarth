@@ -3,14 +3,13 @@ CC				= clang
 CFLAGS 		= -Wall -Werror -Wextra
 RAYLIB		=	-I/usr/local/include -L/usr/local/lib -lraylib
 LIBS 			= -lGL -lm -lpthread -ldl -lrt -lX11
-SRC				=	./src/main.c	\
-						./src/features/camera/camera.c	\
-						./src/features/map/map.c	\
-						./src/features/game/game.c
-INCLUDES	=	-Isrc/includes/	\
-						-Isrc/features/camera/	\
-						-Isrc/features/map/	\
-						-Isrc/features/game/
+SRC				=	./src/main.c																	\
+						./src/core/ecs.c															\
+						./src/core/game.c															\
+						./src/modules/camera/camera.c													\
+						./src/modules/world/world.c														\
+						./src/debug/entity.c
+INCLUDES	=	-Isrc/
 OBJ_SRC		=	$(SRC:.c=.o)
 
 
