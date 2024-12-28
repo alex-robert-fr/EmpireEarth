@@ -17,4 +17,4 @@ typedef struct Game {
 Game *init_game();
 void cleanup_game(Game *game);
 void update_game(Game *game);
-void render_game(Game *game);
+int render_game(Game *game);

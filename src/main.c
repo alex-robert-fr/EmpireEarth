@@ -9,7 +9,9 @@ int main() {
 
   while (!WindowShouldClose()) {
     update_game(game);
-    render_game(game);
+    if (render_game(game) == -1) {
+      return (-1);
+    }
   }
 
   cleanup_game(game);

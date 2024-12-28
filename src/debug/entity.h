@@ -1,3 +1,3 @@
 #pragma once
 
-void display_entity_number(int entities_number);
+int display_entity_number(int entities_number);

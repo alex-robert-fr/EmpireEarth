@@ -55,16 +55,20 @@ void update_game(Game *game) {
   }
 }
 
-void render_game(Game *game) {
+int render_game(Game *game) {
   BeginDrawing();
   ClearBackground(RAYWHITE);
   DrawFPS(5, 0);
-  display_entity_number(game->manager->entities_number);
+  if (display_entity_number(game->manager->entities_number) == -1) {
+    cleanup_game(game);
+    return (-1);
+  }
   BeginMode3D(*game->camera);
   render_map(game->map);
   render_entities(game->manager);
   EndMode3D();
   EndDrawing();
+  return (0);
 }
 
 void cleanup_game(Game *game) {
