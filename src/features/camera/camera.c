@@ -1,16 +1,25 @@
 #include "camera.h"
+#include <stdio.h>
 #include <stdlib.h>
 
-Camera3D *init_camera() {
+Camera3D *create_camera(Vector3 position, Vector3 target, Vector3 up,
+                        float fovy, int projection) {
   Camera3D *camera = calloc(1, sizeof(Camera3D));
+  if (!camera) {
+    fprintf(stderr, "Error: Allocation failed %s:%d\n", __FILE__, __LINE__);
+    return (NULL);
+  }
 
-  camera->position = (Vector3){10.0f, 10.0f, 10.0f};
-  camera->target = (Vector3){0.0f, 0.0f, 0.0f};
-  camera->up = (Vector3){0.0f, 1.0f, 0.0f};
-  camera->fovy = 45.0f;
-  camera->projection = CAMERA_PERSPECTIVE;
+  camera->position = position;
+  camera->target = target;
+  camera->up = up;
+  camera->fovy = fovy;
+  camera->projection = projection;
 
-  return camera;
+  return (camera);
 }
 
-void free_camera(Camera3D *camera) { free(camera); }
+void free_camera(Camera3D *camera) {
+  free(camera);
+  camera = NULL;
+}
