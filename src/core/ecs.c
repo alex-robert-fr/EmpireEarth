@@ -52,8 +52,9 @@ void render_entities(EntityManager *manager) {
   for (Entity e = 0; e < MAX_ENTITIES; e++) {
     if (manager->active[e]) {
       EntityTransform *transform = ecs_get_component(manager, e, COMPONENT_TRANSFORM);
+      transform->position = (Vector3){x, 1.0f, 0.0f};
       if (transform) {
-        DrawCube((Vector3){x, 1.0f, 0.0f}, 0.7f, 0.7f, 0.7f, RED);
+        DrawCube(transform->position, transform->size.x, transform->size.y, transform->size.x, RED);
         x++;
       }
     }

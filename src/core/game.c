@@ -51,8 +51,10 @@ Game *init_game() {
 void update_game(Game *game) {
   if (IsKeyPressed(KEY_P)) {
     Entity entity = ecs_create_entity(game->manager);
-    EntityTransform transform = {.position = (Vector3){0.0f, 0.0f, 0.0f}, .size = (Vector3){0.7f, 0.7f, 0.7f}};
-    ecs_add_component(game->manager, entity, COMPONENT_TRANSFORM, &transform);
+    EntityTransform *transform = calloc(1, sizeof(EntityTransform));
+    transform->position = (Vector3){0.0f, 0.0f, 0.0f};
+    transform->size = (Vector3){0.7f, 0.7f, 0.7f};
+    ecs_add_component(game->manager, entity, COMPONENT_TRANSFORM, transform);
   }
 }
 
