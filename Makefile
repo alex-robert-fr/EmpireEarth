@@ -6,9 +6,10 @@ LIBS 			= -lGL -lm -lpthread -ldl -lrt -lX11
 SRC				=	./src/main.c																	\
 						./src/core/ecs.c															\
 						./src/core/game.c															\
-						./src/modules/camera/camera.c													\
-						./src/modules/world/world.c														\
-						./src/debug/entity.c
+						./src/modules/camera/camera.c									\
+						./src/modules/world/world.c										\
+						./src/debug/entity.c													\
+						./src/modules/selection/selection.c
 INCLUDES	=	-Isrc/
 OBJ_SRC		=	$(SRC:.c=.o)
 

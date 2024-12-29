@@ -5,10 +5,12 @@
 #include <stdlib.h>
 
 #include "components/components.h"
+#include "components/selection.h"
 #include "components/transform.h"
 #include "core/ecs.h"
 #include "debug/entity.h"
 #include "modules/camera.h"
+#include "modules/selection.h"
 #include "modules/world.h"
 
 Game *init_game() {
@@ -55,6 +57,15 @@ void update_game(Game *game) {
     transform->position = (Vector3){0.0f, 0.0f, 0.0f};
     transform->size = (Vector3){0.7f, 0.7f, 0.7f};
     ecs_add_component(game->manager, entity, COMPONENT_TRANSFORM, transform);
+
+    EntitySelection *selection = calloc(1, sizeof(EntitySelection));
+    selection->is_selected = false;
+    ecs_add_component(game->manager, entity, COMPONENT_SELECTED, selection);
+  }
+
+  if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
+    Ray ray = create_ray_from_mouse(GetMousePosition(), *game->camera);
+    detect_entity_collision(ray, game->manager);
   }
 }
 

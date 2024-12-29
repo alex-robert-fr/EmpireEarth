@@ -4,13 +4,10 @@
 
 #include "core/ecs.h"
 #include "modules/world.h"
-struct Camera3D;
-struct Map;
-struct EntityManager;
 
 typedef struct Game {
   EntityManager *manager;
-  Camera3D *camera;
+  Camera *camera;
   Map *map;
 } Game;
 

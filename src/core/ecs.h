@@ -14,7 +14,7 @@ typedef struct {
 
 EntityManager *create_entity_manager();
 void free_entity_manager(EntityManager *manager);
-
+void update_entity_bounding_box(EntityManager *manager, Entity entity);
 Entity ecs_create_entity(EntityManager *manager);
 int ecs_add_component(EntityManager *manager, Entity entity, ComponentID component_id, void *component);
 void *ecs_get_component(EntityManager *manager, Entity entity, ComponentID component_id);
