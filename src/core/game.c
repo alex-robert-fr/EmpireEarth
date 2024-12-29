@@ -58,6 +58,12 @@ void update_game(Game *game) {
 int render_game(Game *game) {
   BeginDrawing();
   ClearBackground(RAYWHITE);
+  UpdateCameraPro(
+      game->camera,
+      (Vector3){IsKeyDown(KEY_UP) * 0.01f - IsKeyDown(KEY_DOWN) * 0.01f,
+                IsKeyDown(KEY_RIGHT) * 0.01f - IsKeyDown(KEY_LEFT) * 0.01f,
+                0.0f},
+      (Vector3){0.0f, 0.0f, 0.0f}, 0);
   DrawFPS(5, 0);
   if (display_entity_number(game->manager->entities_number) == -1) {
     cleanup_game(game);

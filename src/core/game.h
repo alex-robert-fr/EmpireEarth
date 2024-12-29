@@ -11,7 +11,6 @@ typedef struct Game {
   EntityManager *manager;
   Camera3D *camera;
   Map *map;
-  int *counter;
 } Game;
 
 Game *init_game();
