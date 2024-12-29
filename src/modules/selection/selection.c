@@ -22,5 +22,15 @@ int detect_entity_collision(Ray ray, EntityManager *manager) {
       }
     }
   }
+  deselected_all_entity(manager);
   return (-1);
+}
+
+void deselected_all_entity(EntityManager *manager) {
+  for (Entity e = 0; e < MAX_ENTITIES; e++) {
+    EntitySelection *selection = ecs_get_component(manager, e, COMPONENT_SELECTED);
+    if (selection) {
+      selection->is_selected = false;
+    }
+  }
 }
