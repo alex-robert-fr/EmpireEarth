@@ -1,8 +1,9 @@
 #pragma once
 
+#include <raylib.h>
+
 #include "core/ecs.h"
 #include "modules/world.h"
-#include <raylib.h>
 struct Camera3D;
 struct Map;
 struct EntityManager;

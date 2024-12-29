@@ -1,13 +1,15 @@
 #include "core/game.h"
+
+#include <raylib.h>
+#include <stdio.h>
+#include <stdlib.h>
+
 #include "components/components.h"
 #include "components/transform.h"
 #include "core/ecs.h"
 #include "debug/entity.h"
 #include "modules/camera.h"
 #include "modules/world.h"
-#include <raylib.h>
-#include <stdio.h>
-#include <stdlib.h>
 
 Game *init_game() {
   InitWindow(1270, 720, "Empire Earth - The New Age");
@@ -18,9 +20,8 @@ Game *init_game() {
     return (NULL);
   }
 
-  Camera3D *camera =
-      create_camera((Vector3){10.0f, 10.0f, 10.0f}, (Vector3){0.0f, 0.0f, 0.0f},
-                    (Vector3){0.0f, 1.0f, 0.0f}, 45.0f, CAMERA_PERSPECTIVE);
+  Camera3D *camera = create_camera((Vector3){10.0f, 10.0f, 10.0f}, (Vector3){0.0f, 0.0f, 0.0f},
+                                   (Vector3){0.0f, 1.0f, 0.0f}, 45.0f, CAMERA_PERSPECTIVE);
   if (!camera) {
     CloseWindow();
     return (NULL);
@@ -50,7 +51,7 @@ Game *init_game() {
 void update_game(Game *game) {
   if (IsKeyPressed(KEY_P)) {
     Entity entity = ecs_create_entity(game->manager);
-    EntityTransform transform = {.position = (Vector3){0.0f, 0.0f, 0.0f}};
+    EntityTransform transform = {.position = (Vector3){0.0f, 0.0f, 0.0f}, .size = (Vector3){0.7f, 0.7f, 0.7f}};
     ecs_add_component(game->manager, entity, COMPONENT_TRANSFORM, &transform);
   }
 }
@@ -58,12 +59,10 @@ void update_game(Game *game) {
 int render_game(Game *game) {
   BeginDrawing();
   ClearBackground(RAYWHITE);
-  UpdateCameraPro(
-      game->camera,
-      (Vector3){IsKeyDown(KEY_UP) * 0.01f - IsKeyDown(KEY_DOWN) * 0.01f,
-                IsKeyDown(KEY_RIGHT) * 0.01f - IsKeyDown(KEY_LEFT) * 0.01f,
-                0.0f},
-      (Vector3){0.0f, 0.0f, 0.0f}, 0);
+  UpdateCameraPro(game->camera,
+                  (Vector3){IsKeyDown(KEY_UP) * 0.01f - IsKeyDown(KEY_DOWN) * 0.01f,
+                            IsKeyDown(KEY_RIGHT) * 0.01f - IsKeyDown(KEY_LEFT) * 0.01f, 0.0f},
+                  (Vector3){0.0f, 0.0f, 0.0f}, 0);
   DrawFPS(5, 0);
   if (display_entity_number(game->manager->entities_number) == -1) {
     cleanup_game(game);

@@ -1,5 +1,6 @@
-#include "core/game.h"
 #include <raylib.h>
+
+#include "core/game.h"
 
 int main() {
   Game *game = init_game();
