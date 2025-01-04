@@ -6,10 +6,11 @@ Bienvenue sur le projet **Empire Earth** ! Ce projet a pour objectif de recréer
 
 ## 🎯 **Objectifs**
 
-- **Graphismes :** Un style minimaliste mais réaliste, avec des animations complexes.
-- **Performance :** Fonctionner sur des PC très bas de gamme (Vieux CPU, < 8 Go de RAM).
 - **Gameplay :** Inclure des mécaniques complexes avec une gestion des ressources, des unités, des bâtiments, et un système d'ères complet.
-- **Mode LAN :** Synchronisation en temps réel pour des parties stratégiques à plusieurs.
+- **Mode LAN :** Synchronisation en temps réel pour des parties à plusieurs.
+- **Graphismes :** Un style minimaliste mais réaliste, avec des animations détaillé.
+- **Performance :** Doit fonctionner sur des PC très bas de gamme (Vieux CPU, < 8 Go de RAM).
+- **Mods :** Doit permettre la création de mods pour la communauté
 
 _Pas d'intelligence artificielle (IA) dans cette version initiale : tout est axé sur le multijoueur et les fondamentaux du gameplay. ⚡_
 
