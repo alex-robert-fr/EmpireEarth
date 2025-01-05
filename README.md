@@ -22,29 +22,90 @@ Voici notre évolution vers la version 1.0 :
 
 ### Phase 1 : **"The Foundations of a New World"**
 
-- [ ] Implémenter la boucle principale.
-- [ ] Créer un moteur modulaire avec un système ECS (Gestion des **entities, components and systems**).
-- [ ] Définir la structure du projet (fichiers, modules).
-- [ ] Intégrer la gestion hybride des ressources .
+#### Structure du projet
+
+- [ ] Organiser les fichiers et modules en suivant une architecture modulaire.
+- [ ] Configurer le dépôt pour utiliser le workflow Gitflow.
+- [ ] Configurer un système de CI/CD pour automatiser les builds, les tests et le déploiement.
+
+#### Implémentation de la boucle principale.
+
+- [ ] Mettre en place une boucle à taux fixe avec interpolation.
+- [ ] Implémenter des gestionnaires pour les événements du jeu (input, logique).
+- [ ] Ajouter un moyens pour déboguer les performances.
+
+#### Entity Component System (ECS)
+
+- [ ] Définir un système ECS basique avec gestion des entités et des composants.
+- [ ] Implémenter des systèmes simples (ex. : position des entités).
+
+#### Gestion hybride des ressources
+
+- [ ] Créer un gestionnaire de ressources pour charger/décharger dynamiquement.
+- [ ] Implémenter une gestion des erreurs si une ressource manque.
 
 ### Phase 2 : **"A Simple World is a Cool World"**
 
-- [ ] Implémenter une gestion simplifié des unités.
-- [ ] Implémenter une gestion simplifié des bâtiments.
-- [ ] Ajouter les différents types de ressources (nourriture, bois, pierre, fer, pétrole, uranium).
+#### Unité de base
+
+- [ ] Créer une entité d’unité avec des déplacements basiques.
+- [ ] Implémenter des points de vie pour les unités.
+
+#### Bâtiment de base
+
+- [ ] Créer une entité bâtiment avec des propriétés basiques (coût, temps de construction).
+- [ ] Permettre la destruction de bâtiments.
+
+#### Ressources
+
+- [ ] Créer une entité ressource avec des propriétés basiques.
+
+#### Interface utilisateur basique
+
+- [ ] Créer un menu pour quitter ou relancer une partie.
+- [ ] Ajouter un zoom et un déplacement dynamique sur la carte.
 
 ### Phase 3 : **"Welcome to the Internet"**
 
-- [ ] Mettre en place un mode LAN simple (à synchronisation client-serveur).
-- [ ] Créer une interface minimale pour configurer la partie et se connecter.
+#### Mode LAN basique
+
+- [ ] Mettre en place un modèle client-serveur.
+- [ ] Ajouter un système de synchronisation des positions des unités.
+- [ ] Gérer les déconnexions et reconnexions simples des joueurs.
+
+#### Interface LAN
+
+- [ ] Créer une interface simple pour héberger/rejoindre une partie.
+- [ ] Permettre aux joueurs de choisir une couleur ou une faction.
 
 ### Phase 4 : **"The Beginning of a New Era"**
 
-- [ ] Implémenter la gestion des unités (déplacement, combat).
-- [ ] Ajouter la gestion des bâtiments (construction, production).
-- [ ] Intégrer la gestion de l'énergie (électricité produite et transportée).
-- [ ] Développer l'arbre technologique influençant les ères et les mécaniques.
-- [ ] Créer les menus principaux (menu principal, paramètres, LAN).
-- [ ] Intégrer un HUD immersif avec mini-carte, ressources, et commandes des unités.
-- [ ] Intégrer le transport manuel des ressources.
-- [ ] Ajouter des points d'intérêt cachés pour des bonus de ressources.
+#### Gestion avancée des unités
+
+- [ ] Ajouter des actions avancées (attaquer, récolter des ressources, construire).
+- [ ] Implémenter des animations pour chaque action.
+
+#### Bâtiments avancés
+
+- [ ] Ajouter des bâtiments nécessitant des ressources pour fonctionner.
+- [ ] Implémenter des bâtiments producteurs d’énergie (centrales, éoliennes).
+- [ ] Permettre la construction d’infrastructures (routes, ponts).
+
+#### Système de technologie
+
+- [ ] Définir un arbre technologique avec des prérequis et des bonus.
+- [ ] Implémenter des technologies spécifiques à chaque ère.
+
+#### HUD immersif
+
+- [ ] Créer un HUD plus détaillé avec des informations contextuelles (unités/bâtiments).
+
+### Phase 5: Exploring the World
+
+### Phase 6: Expanding the Gameplay
+
+### Phase 7: Immersion & Realism
+
+### Phase 8 : Towards Perfection
+
+### Phase 9: V1 Release
