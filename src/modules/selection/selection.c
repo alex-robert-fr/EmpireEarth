@@ -11,6 +11,8 @@ Ray create_ray_from_mouse(Vector2 mouse_position, Camera3D camera) {
 }
 
 int detect_entity_collision(Ray ray, EntityManager *manager) {
+  // Ensure only one entity remains selected at a time
+  deselected_all_entity(manager);
   for (Entity e = 0; e < MAX_ENTITIES; e++) {
     update_entity_bounding_box(manager, e);
     EntitySelection *selection = ecs_get_component(manager, e, COMPONENT_SELECTED);
